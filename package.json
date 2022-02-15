@@ -1,0 +1,17 @@
+{
+  "name": "Fakeq",
+  "scripts": {
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.0.0-rc.4"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1.0.0-rc.1"
+  },
+  "version": "1.0.0",
+  "description": "fakeq is a fake qq client.",
+  "main": "index.js",
+  "author": "Star_caorui",
+  "license": "MIT"
+}
