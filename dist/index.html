@@ -7,52 +7,57 @@
   <meta name="renderer" content="webkit" />
   <meta name="force-rendering" content="webkit" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/css/mdui.min.css" />
+  <!-- Module: CSS -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdui/1.0.2/css/mdui.min.css"
+    integrity="sha512-Hh2syGXSuZabqBNcdvPiGo67ASyKhlKTZV9lLOmJp10qZ1v8/YPeuZBoOh0WmS/UPwWtRzQhNJfYyKDAhdGocQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Fakeq</title>
 </head>
 
-<body>
+<body class="mdui-theme-layout-auto mdui-theme-primary-light-green mdui-theme-accent-blue">
   <div class="mdui-appbar">
-    <div class="mdui-toolbar mdui-color-theme">
-      <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar'}">
+    <div class="mdui-toolbar">
+      <button class="mdui-btn mdui-btn-icon settings" mdui-drawer="{target: '#sidebar'}">
         <i class="mdui-icon">
           <ion-icon name="menu-outline"></ion-icon>
         </i>
-      </a>
-      <a href="javascript:;" class="mdui-typo-title">Fakeq</a>
+      </button>
+      <span class="mdui-typo-title">Fakeq</span>
       <div class="mdui-toolbar-spacer"></div>
-      <a href="javascript:;" class="mdui-btn mdui-btn-icon">
+      <button class="mdui-btn mdui-btn-icon">
         <i class="mdui-icon mdui-text-color-theme-icon">
           <ion-icon name="search-outline"></ion-icon>
         </i>
-      </a>
-      <a href="javascript:;" class="mdui-btn mdui-btn-icon">
+      </button>
+      <button class="mdui-btn mdui-btn-icon">
         <i class="mdui-icon mdui-text-color-theme-icon">
           <ion-icon name="refresh-outline"></ion-icon>
         </i>
-      </a>
-      <a href="javascript:;" class="mdui-btn mdui-btn-icon">
+      </button>
+      <button class="mdui-btn mdui-btn-icon">
         <i class="mdui-icon mdui-text-color-theme-icon">
           <ion-icon name="ellipsis-vertical-outline"></ion-icon>
         </i>
-      </a>
+      </button>
     </div>
 
-    <div class="mdui-drawer" id="sidebar">
+    <!-- Module: 侧边栏 -->
+    <div class="mdui-drawer mdui-drawer-close mdui-color-theme-100" id="sidebar">
       <div class="mdui-list">
         <div class="mdui-card-header">
-          <img class="mdui-card-header-avatar" src="https://q1.qlogo.cn/g?b=qq&s=640&nk=2549309641" loading="lazy" />
-          <div class="mdui-card-header-title mdui-text-color-theme-text">Star_caorui</div>
-          <div class="mdui-card-header-subtitle mdui-text-color-theme-text">这里是个性签名！</div>
+          <img class="mdui-card-header-avatar user_logo" src="" loading="lazy" />
+          <div class="mdui-card-header-title mdui-text-color-theme-text user_name"></div>
+          <div class="mdui-card-header-subtitle mdui-text-color-theme-text user_slogan"></div>
         </div>
         <div class="mdui-divider"></div>
-        <a class="mdui-list-item mdui-ripple mdui-color-theme-a100">
+        <a class="mdui-list-item mdui-ripple">
           <i class="mdui-list-item-icon mdui-icon mdui-text-color-theme-icon">
             <ion-icon name="person-outline"></ion-icon>
           </i>
           <div class="mdui-list-item-content mdui-text-color-theme-text">我的帐号</div>
         </a>
-        <a class="mdui-list-item mdui-ripple mdui-color-theme-a100">
+        <a class="mdui-list-item mdui-ripple">
           <i class="mdui-list-item-icon mdui-icon mdui-text-color-theme-icon">
             <ion-icon name="options-outline"></ion-icon>
           </i>
@@ -61,13 +66,15 @@
       </div>
     </div>
 
-    <div class="mdui-tab mdui-tab-full-width mdui-color-theme" mdui-tab>
+    <!-- Module: 顶部 Tab 栏 -->
+    <div class="mdui-tab mdui-tab-full-width" mdui-tab>
       <a href="#chat" class="mdui-ripple">消息</a>
-      <a href="#people" class="mdui-ripple">联系人</a>
-      <a href="#post" class="mdui-ripple">动态</a>
+      <a href="#people" class="mdui-ripple people">联系人</a>
+      <a href="#post" class="mdui-ripple mdui-hidden">动态</a>
     </div>
   </div>
 
+  <!-- Module: 消息 -->
   <div id="chat" class="mdui-p-a-2">
     <ul class="mdui-list">
       <li class="mdui-list-item mdui-ripple">
@@ -106,6 +113,7 @@
     </ul>
   </div>
 
+  <!-- Module: 联系人 -->
   <div id="people" class="mdui-p-a-2">
     <div class="mdui-collapse-item-header mdui-list-item mdui-ripple" mdui-dialog="{target: '#new-friend'}">
       <div class="mdui-list-item-content">新朋友</div>
@@ -119,7 +127,7 @@
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </i>
     </div>
-
+    <!-- Module: 新朋友 -->
     <div class="mdui-dialog" id="new-friend">
       <div class="mdui-dialog-content">
         <div class="mdui-dialog-title">
@@ -180,7 +188,7 @@
         </div>
       </div>
     </div>
-
+    <!-- Module: 群通知 -->
     <div class="mdui-dialog" id="group-notification">
       <div class="mdui-dialog-content">
         <div class="mdui-dialog-title">
@@ -231,50 +239,18 @@
         </div>
       </div>
     </div>
-
+    <!-- Module: 联系人 Tab 栏 -->
     <div class="mdui-tab mdui-tab-full-width " mdui-tab>
       <a href="#friend" class="mdui-ripple">好友</a>
-      <a href="#friend-classify" class="mdui-ripple">分组</a>
-      <a href="#group" class="mdui-ripple">群聊</a>
+      <a href="#friend-classify" class="mdui-ripple mdui-hidden">分组</a>
+      <a href="#group" class="mdui-ripple group">群聊</a>
     </div>
+    <!-- Module: 我的好友 -->
     <div id="friend" class="mdui-p-a-2">
-      <ul class="mdui-list">
-        <li class="mdui-list-item mdui-ripple">
-          <div class="mdui-list-item-avatar">
-            <img src="https://q1.qlogo.cn/g?b=qq&s=640&nk=2549309641" />
-          </div>
-          <div class="mdui-list-item-content">
-            <div class="mdui-list-item-title">今夕何夕</div>
-            <div class="mdui-list-item-text mdui-list-item-one-line">
-              第三方的 QQ 为什么也有个性签名？
-            </div>
-          </div>
-        </li>
-        <li class="mdui-list-item mdui-ripple">
-          <div class="mdui-list-item-avatar">
-            <img src="https://q1.qlogo.cn/g?b=qq&s=640&nk=1239504152" />
-          </div>
-          <div class="mdui-list-item-content">
-            <div class="mdui-list-item-title">云山鸦</div>
-            <div class="mdui-list-item-text mdui-list-item-one-line">
-              这是个好问题...
-            </div>
-          </div>
-        </li>
-        <li class="mdui-list-item mdui-ripple">
-          <div class="mdui-list-item-avatar">
-            <img src="https://q1.qlogo.cn/g?b=qq&s=640&nk=1370879951" />
-          </div>
-          <div class="mdui-list-item-content">
-            <div class="mdui-list-item-title">神様は居るの？</div>
-            <div class="mdui-list-item-text mdui-list-item-one-line">
-              谁那么闲去写这啊！
-            </div>
-          </div>
-        </li>
+      <ul class="mdui-list friend-ul">
       </ul>
     </div>
-
+    <!-- Module: 好友分组 -->
     <div id="friend-classify" class="mdui-p-a-2">
       <ul class="mdui-list" mdui-collapse="{accordion: true}">
         <li class="mdui-collapse-item">
@@ -331,200 +307,206 @@
         </li>
       </ul>
     </div>
-
+    <!-- Module: 我的群聊 -->
     <div id="group" class="mdui-p-a-2">
-      <ul class="mdui-list" mdui-collapse="{accordion: true}">
-        <li class="mdui-collapse-item">
-          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-            <i class="mdui-collapse-item-arrow mdui-list-item-icon mdui-icon">
-              <ion-icon name="chevron-forward-outline"></ion-icon>
-            </i>
-            <div class="mdui-list-item-content">我创建的群聊</div>
-            <div class="">1</div>
-          </div>
-          <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
-            <div class="mdui-card-header mdui-ripple">
-              <img class="mdui-card-header-avatar" src="https://q1.qlogo.cn/g?b=qq&s=640&nk=2549309641" loading="lazy" />
-              <div class="mdui-card-header-title mdui-text-color-theme-text">arch Linux/archlinux交流群</div>
-              <div class="mdui-card-header-subtitle mdui-text-color-theme-text">这里是群介绍</div>
-            </div>
-            <div class="mdui-card-header mdui-ripple">
-              <img class="mdui-card-header-avatar" src="https://q1.qlogo.cn/g?b=qq&s=640&nk=1239504152" loading="lazy" />
-              <div class="mdui-card-header-title mdui-text-color-theme-text">酷安Linux交流群</div>
-              <div class="mdui-card-header-subtitle mdui-text-color-theme-text">这里是群介绍</div>
-            </div>
-            <div class="mdui-card-header mdui-ripple">
-              <img class="mdui-card-header-avatar" src="https://q1.qlogo.cn/g?b=qq&s=640&nk=1370879951" loading="lazy" />
-              <div class="mdui-card-header-title mdui-text-color-theme-text">Manjaro Linux交流群</div>
-              <div class="mdui-card-header-subtitle mdui-text-color-theme-text">这里是群介绍</div>
-            </div>
-          </div>
-        </li>
-        <li class="mdui-collapse-item">
-          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-            <i class="mdui-collapse-item-arrow mdui-list-item-icon mdui-icon">
-              <ion-icon name="chevron-forward-outline"></ion-icon>
-            </i>
-            <div class="mdui-list-item-content">我管理的群聊</div>
-            <div class="">0</div>
-          </div>
-          <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
-            <div class="mdui-card-header mdui-ripple">
-              <img class="mdui-card-header-avatar" src="https://q1.qlogo.cn/g?b=qq&s=640&nk=2549309641" loading="lazy" />
-              <div class="mdui-card-header-title mdui-text-color-theme-text">arch Linux/archlinux交流群</div>
-              <div class="mdui-card-header-subtitle mdui-text-color-theme-text">这里是群介绍</div>
-            </div>
-            <div class="mdui-card-header mdui-ripple">
-              <img class="mdui-card-header-avatar" src="https://q1.qlogo.cn/g?b=qq&s=640&nk=1239504152" loading="lazy" />
-              <div class="mdui-card-header-title mdui-text-color-theme-text">酷安Linux交流群</div>
-              <div class="mdui-card-header-subtitle mdui-text-color-theme-text">这里是群介绍</div>
-            </div>
-            <div class="mdui-card-header mdui-ripple">
-              <img class="mdui-card-header-avatar" src="https://q1.qlogo.cn/g?b=qq&s=640&nk=1370879951" loading="lazy" />
-              <div class="mdui-card-header-title mdui-text-color-theme-text">Manjaro Linux交流群</div>
-              <div class="mdui-card-header-subtitle mdui-text-color-theme-text">这里是群介绍</div>
-            </div>
-          </div>
-        </li>
-        <li class="mdui-collapse-item">
-          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-            <i class="mdui-collapse-item-arrow mdui-list-item-icon mdui-icon">
-              <ion-icon name="chevron-forward-outline"></ion-icon>
-            </i>
-            <div class="mdui-list-item-content">我加入的群聊</div>
-            <div class="">3</div>
-          </div>
-          <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
-            <div class="mdui-card-header mdui-ripple">
-              <img class="mdui-card-header-avatar" src="https://p.qlogo.cn/gh/204097403/204097403/" loading="lazy" />
-              <div class="mdui-card-header-title mdui-text-color-theme-text">arch Linux/archlinux交流群</div>
-              <div class="mdui-card-header-subtitle mdui-text-color-theme-text">这里是群介绍</div>
-            </div>
-            <div class="mdui-card-header mdui-ripple">
-              <img class="mdui-card-header-avatar" src="https://p.qlogo.cn/gh/1039477758/1039477758/" loading="lazy" />
-              <div class="mdui-card-header-title mdui-text-color-theme-text">酷安Linux交流群</div>
-              <div class="mdui-card-header-subtitle mdui-text-color-theme-text">这里是群介绍</div>
-            </div>
-            <div class="mdui-card-header mdui-ripple">
-              <img class="mdui-card-header-avatar" src="https://p.qlogo.cn/gh/478058928/478058928/" loading="lazy" />
-              <div class="mdui-card-header-title mdui-text-color-theme-text">Manjaro Linux交流群</div>
-              <div class="mdui-card-header-subtitle mdui-text-color-theme-text">这里是群介绍</div>
-            </div>
-          </div>
-        </li>
+      <ul class="mdui-list group-ul" mdui-collapse="{accordion: true}">
       </ul>
     </div>
   </div>
-
+  <!-- Module: 动态 -->
   <div id="post" class="mdui-p-a-2">
-    <div class="mdui-card">
-      <div class="mdui-card-header">
-        <img class="mdui-card-header-avatar" src="https://q1.qlogo.cn/g?b=qq&s=640&nk=2549309641" />
-        <div class="mdui-card-header-title">Star_caorui</div>
-        <div class="mdui-card-header-subtitle">今天 2:30</div>
+    <div class="mdui-container-fluid mdui-row">
+      <div class="mdui-col-xs-12  mdui-col-sm-6 mdui-col-md-4 mdui-col-lg-3 mdui-col-xl-2">
+        <div class="mdui-card mdui-m-y-1">
+          <div class="mdui-card-header">
+            <img class="mdui-card-header-avatar" src="https://q1.qlogo.cn/g?b=qq&s=640&nk=2549309641" />
+            <div class="mdui-card-header-title">Star_caorui</div>
+            <div class="mdui-card-header-subtitle">今天 2:30</div>
+          </div>
+          <div class="mdui-card-menu">
+            <button class="mdui-btn mdui-btn-icon mdui-ripple">
+              <i class="mdui-icon">
+                <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+              </i>
+            </button>
+          </div>
+          <div class="mdui-card-content">为什么我要写这个功能？？？</div>
+          <div class="mdui-card-actions">
+            <div>
+              <div class="mdui-chip">
+                <span class="mdui-chip-title">Star_caorui</span>
+              </div>
+              <div class="mdui-chip">
+                <span class="mdui-chip-title">云山鸦</span>
+              </div>
+              <div class="mdui-chip">
+                <span class="mdui-chip-title">神様は居るの？</span>
+              </div>
+              觉得很淦
+            </div>
+            <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-ripple">
+              <i class="mdui-icon">
+                <ion-icon name="share-outline"></ion-icon>
+              </i>
+            </button>
+            <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-ripple">
+              <i class="mdui-icon">
+                <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+              </i>
+            </button>
+            <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-ripple">
+              <i class="mdui-icon">
+                <ion-icon name="thumbs-up-outline"></ion-icon>
+              </i>
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="mdui-card-menu">
-        <button class="mdui-btn mdui-btn-icon mdui-ripple">
-          <i class="mdui-icon">
-            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-          </i>
-        </button>
-      </div>
-      <div class="mdui-card-content">为什么我要写这个功能？？？</div>
-      <div class="mdui-card-actions">
-        <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-ripple">
-          <i class="mdui-icon"><ion-icon name="share-outline"></ion-icon></i>
-        </button>
-        <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-ripple">
-          <i class="mdui-icon"><ion-icon name="chatbox-ellipses-outline"></ion-icon></i>
-        </button>
-        <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-ripple">
-          <i class="mdui-icon">
-            <ion-icon name="thumbs-up-outline"></ion-icon>
-          </i>
-        </button>
-      </div>
-    </div>
-    <br />
-    <div>
-      <div class="mdui-chip">
-        <span class="mdui-chip-title">Star_caorui</span>
-      </div>
-      <div class="mdui-chip">
-        <span class="mdui-chip-title">云山鸦</span>
-      </div>
-      <div class="mdui-chip">
-        <span class="mdui-chip-title">神様は居るの？</span>
-      </div>
-      等人觉得很淦
-    </div>
-    <br />
-    <div class="mdui-card">
-      <div class="mdui-card-header">
-        <img class="mdui-card-header-avatar" src="https://q1.qlogo.cn/g?b=qq&s=640&nk=2549309641" />
-        <div class="mdui-card-header-title">Star_caorui</div>
-        <div class="mdui-card-header-subtitle">今天 2:30</div>
-      </div>
-      <div class="mdui-card-menu">
-        <button class="mdui-btn mdui-btn-icon mdui-ripple">
-          <i class="mdui-icon">
-            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-          </i>
-        </button>
-      </div>
-      <div class="mdui-card-content">为什么我要写这个功能？？？</div>
-      <div class="mdui-card-actions">
-        <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-ripple">
-          <i class="mdui-icon"><ion-icon name="share-outline"></ion-icon></i>
-        </button>
-        <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-ripple">
-          <i class="mdui-icon"><ion-icon name="chatbox-ellipses-outline"></ion-icon></i>
-        </button>
-        <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-ripple">
-          <i class="mdui-icon">
-            <ion-icon name="thumbs-up-outline"></ion-icon>
-          </i>
-        </button>
-      </div>
-    </div>
-    <br />
-    <div class="mdui-card">
-      <div class="mdui-card-header">
-        <img class="mdui-card-header-avatar" src="https://q1.qlogo.cn/g?b=qq&s=640&nk=2549309641" />
-        <div class="mdui-card-header-title">Star_caorui</div>
-        <div class="mdui-card-header-subtitle">今天 2:30</div>
-      </div>
-      <div class="mdui-card-menu">
-        <button class="mdui-btn mdui-btn-icon mdui-ripple">
-          <i class="mdui-icon">
-            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-          </i>
-        </button>
-      </div>
-      <div class="mdui-card-content">为什么我要写这个功能？？？</div>
-      <div class="mdui-card-actions">
-        <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-ripple">
-          <i class="mdui-icon">
-            <ion-icon name="share-outline"></ion-icon>
-          </i>
-        </button>
-        <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-ripple">
-          <i class="mdui-icon">
-            <ion-icon name="chatbox-ellipses-outline"></ion-icon>
-          </i>
-        </button>
-        <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-ripple">
-          <i class="mdui-icon">
-            <ion-icon name="thumbs-up-outline"></ion-icon>
-          </i>
-        </button>
+      <div class="mdui-col-xs-12  mdui-col-sm-6 mdui-col-md-4 mdui-col-lg-3 mdui-col-xl-2">
+        <div class="mdui-card mdui-m-y-1">
+          <div class="mdui-card-header">
+            <img class="mdui-card-header-avatar" src="https://q1.qlogo.cn/g?b=qq&s=640&nk=2549309641" />
+            <div class="mdui-card-header-title">Star_caorui</div>
+            <div class="mdui-card-header-subtitle">今天 2:30</div>
+          </div>
+          <div class="mdui-card-menu">
+            <button class="mdui-btn mdui-btn-icon mdui-ripple">
+              <i class="mdui-icon">
+                <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+              </i>
+            </button>
+          </div>
+          <div class="mdui-card-content">为什么我要写这个功能？？？</div>
+          <div class="mdui-card-actions">
+            <div>
+              <div class="mdui-chip">
+                <span class="mdui-chip-title">Star_caorui</span>
+              </div>
+              <div class="mdui-chip">
+                <span class="mdui-chip-title">云山鸦</span>
+              </div>
+              <div class="mdui-chip">
+                <span class="mdui-chip-title">神様は居るの？</span>
+              </div>
+              觉得很淦
+            </div>
+            <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-ripple">
+              <i class="mdui-icon">
+                <ion-icon name="share-outline"></ion-icon>
+              </i>
+            </button>
+            <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-ripple">
+              <i class="mdui-icon">
+                <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+              </i>
+            </button>
+            <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-ripple">
+              <i class="mdui-icon">
+                <ion-icon name="thumbs-up-outline"></ion-icon>
+              </i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <!-- Module: JavaScript -->
+  <script
+    src="https://cdn.bootcdn.net/ajax/libs/mdui/1.0.2/js/mdui.min.js"
+    integrity="sha512-LBh0vC8hNru7991yk7vBb3tiBCU41shGOowGRnLqz63KYedvNQOyGOKHnl/pHSRYJ2P45bjzALArvDDHSSc2KA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="module"
+    src="https://cdn.bootcdn.net/ajax/libs/ionicons/6.0.1/ionicons/ionicons.esm.min.js"
+    integrity="sha512-6dpLw00u76bId3OXfrMDT2mpSlzfDRx5htyA9l3O4CkjH8Dr25yKH3ndAgQhgPQogRNzNL/HqxUzBLQKvRJSxg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script nomodule
+    src="https://cdn.bootcdn.net/ajax/libs/ionicons/6.0.1/ionicons.min.js"
+    integrity="sha512-esqkwbZWQWGPKMg0apElthYF54n7TMcMGQs/rC8KyWIjuFt+d+kB2n4j7yWOXGn82wMrs5rLMPoiw7n73GJ5Nw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+  var $ = mdui.$;
+    const ws = new WebSocket('ws://localhost:5700');
+    // const ws = new WebSocket('ws://localhost:6700');
 
-  <!-- MDUI JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/js/mdui.min.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    function errConnect() {
+      mdui.alert('请检查您的后端工作是否正常', '后端通信异常');
+    }
+
+    function initUser() {
+      ws.send('{"action" : "get_login_info", "params" : {}}');
+      ws.onmessage = function (event) {
+        let data = JSON.parse(event.data);
+        if (data.status == 'ok') {
+          $('.user_logo').attr({src: 'https://q1.qlogo.cn/g?b=qq&s=640&nk=' + data.data.user_id});
+          $('.user_name').text(data.data.nickname);
+          $('.user_slogan').text('暂不支持设置个性签名');
+          console.log('Message from server ', data.data);
+        }
+      }
+    }
+
+    function getUserList() {
+      ws.send('{"action" : "get_friend_list", "params" : {}}');
+      ws.onmessage = function (event) {
+        let data = JSON.parse(event.data);
+        if (data.status == 'ok') {
+          $('.friend-ul').empty();
+          for (let i in data.data) {
+            $('.friend-ul').append('<li class="mdui-list-item mdui-ripple"><div class="mdui-list-item-avatar"><img src="https://q1.qlogo.cn/g?b=qq&s=640&nk=' + data.data[i]['user_id'] + '" /></div><div class="mdui-list-item-content"><div class="mdui-list-item-title">' + data.data[i]['remark'] + '</div><div class="mdui-list-item-text mdui-list-item-one-line mdui-hidden">暂不支持个性签名</div></div></li');
+          }
+        }
+      }
+    }
+
+    function getGroupList() {
+      ws.send('{"action" : "get_group_list", "params" : {}}');
+      ws.onmessage = function (event) {
+        let data = JSON.parse(event.data);
+        if (data.status == 'ok') {
+          $('.group-ul').empty();
+          for (let i in data.data) {
+            $('.group-ul').append('<li class="mdui-list-item mdui-ripple"><div class="mdui-list-item-avatar"><img src="https://p.qlogo.cn/gh/' + data.data[i]['group_id'] + '/' + data.data[i]['group_id'] + '/0" /></div><div class="mdui-list-item-content"><div class="mdui-list-item-title">' + data.data[i]['group_name'] + '</div></div></li');
+          }
+        }
+      }
+    }
+
+    function initChat() {
+      console.log('initChat');
+    }
+
+    function initPeople() {
+      getUserList();
+    }
+
+    ws.addEventListener('close', function (event) {
+      errConnect();
+    });
+
+    ws.addEventListener('open', function (event) {
+      initChat();
+    });
+
+    $('.settings').on('click', function (e) {
+      initUser();
+      console.clear();
+    });
+
+    $('.people').on('click', function (e) {
+      initPeople();
+      console.clear();
+    });
+
+    $('.group').on('click', function (e) {
+      getGroupList();
+      console.clear();
+    });
+
+    ws.addEventListener('message', function (event) {
+      console.log('Message from server ', event.data);
+    });
+
+
+  </script>
 </body>
 </html>
