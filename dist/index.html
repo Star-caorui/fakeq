@@ -15,10 +15,10 @@
   <title>Fakeq</title>
 </head>
 
-<body class="mdui-theme-layout-auto mdui-theme-primary-light-green mdui-theme-accent-blue">
-  <div class="mdui-appbar">
+<body class="mdui-theme-layout-auto mdui-theme-primary-white mdui-theme-accent-blue">
+  <div class="mdui-appbar mdui-text-color-theme">
     <div class="mdui-toolbar">
-      <button id="sidebar_button" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar'}">
+      <button id="sidebar_button" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', overlay: false}">
         <i class="mdui-icon">
           <ion-icon name="menu-outline"></ion-icon>
         </i>
@@ -35,7 +35,7 @@
           <ion-icon name="refresh-outline"></ion-icon>
         </i>
       </button>
-      <button id="more_button" class="mdui-btn mdui-btn-icon">
+      <button class="mdui-btn mdui-btn-icon">
         <i class="mdui-icon mdui-text-color-theme-icon">
           <ion-icon name="ellipsis-vertical-outline"></ion-icon>
         </i>
@@ -75,9 +75,10 @@
   </div>
 
   <!-- Module: 消息 -->
-  <div id="chat" class="mdui-p-a-2">
-    <ul id="chat-list" class="mdui-list">
-      <li class="mdui-list-item mdui-ripple">
+  <div id="chat">
+    <div id="chat-list"
+      class="mdui-list mdui-p-r-1 mdui-col-xs-12  mdui-col-sm-4 mdui-col-md-3 mdui-col-lg-2 mdui-col-xl-2">
+      <div class="mdui-list-item mdui-ripple">
         <div class="mdui-list-item-avatar">
           <img src="https://q1.qlogo.cn/g?b=qq&s=640&nk=2549309641" />
         </div>
@@ -87,8 +88,8 @@
             这个样式可以吗？
           </div>
         </div>
-      </li>
-      <li class="mdui-list-item mdui-ripple">
+      </div>
+      <div class="mdui-list-item mdui-ripple">
         <div class="mdui-list-item-avatar">
           <img src="https://q1.qlogo.cn/g?b=qq&s=640&nk=1239504152" />
         </div>
@@ -98,8 +99,8 @@
             有点不太行
           </div>
         </div>
-      </li>
-      <li class="mdui-list-item mdui-ripple">
+      </div>
+      <div class="mdui-list-item mdui-ripple">
         <div class="mdui-list-item-avatar">
           <img src="https://q1.qlogo.cn/g?b=qq&s=640&nk=1370879951" />
         </div>
@@ -109,8 +110,56 @@
             确实
           </div>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
+    <div id="chat-area" style="height: 30vh;">
+      <div class="mdui-list mdui-p-l-1 mdui-hidden-xs mdui-col-sm-8 mdui-col-md-9 mdui-col-lg-10 mdui-col-xl-10">
+        <div class="mdui-list-item">
+          <div class="mdui-list-item-avatar">
+            <img src="https://q1.qlogo.cn/g?b=qq&s=640&nk=1239504152" />
+          </div>
+          <div class="mdui-list-item-content">
+            <div class="mdui-list-item-title">云山鸦</div>
+            <div class="mdui-list-item-text mdui-list-item-one-line">
+              有点不太行
+            </div>
+          </div>
+          <button class="mdui-btn mdui-btn-icon mdui-ripple">
+            <i class="mdui-icon mdui-text-color-theme-icon">
+              <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+            </i>
+          </button>
+        </div>
+        <div class="mdui-p-x-2" style="height: calc(100vh  - 357px); overflow-y:scroll;">
+          <div style="height: 10000px;"></div>
+        </div>
+        <div class="mdui-p-x-2">
+          <button class="mdui-btn mdui-btn-icon mdui-ripple">
+            <i class="mdui-icon mdui-text-color-theme-icon">
+              <ion-icon name="folder-outline"></ion-icon>
+            </i>
+          </button>
+          <button class="mdui-btn mdui-btn-icon mdui-ripple">
+            <i class="mdui-icon mdui-text-color-theme-icon">
+              <ion-icon name="image-outline"></ion-icon>
+            </i>
+          </button>
+          <button class="mdui-btn mdui-ripple mdui-float-right">发送</button>
+          <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-float-right">
+            <i class="mdui-icon mdui-text-color-theme-icon">
+              <ion-icon name="happy-outline"></ion-icon>
+            </i>
+          </button>
+          <div class="mdui-textfield">
+            <div class="mdui-divider"></div>
+            <textarea class="mdui-textfield-input" rows="4" placeholder="Type Message"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="mdui-list mdui-hidden-sm-up">
+        小屏幕该用的方法
+      </div>
+    </div>
   </div>
 
   <!-- Module: 联系人 -->
@@ -186,7 +235,7 @@
       <ul id="friend-list" class="mdui-list"></ul>
     </div>
     <!-- Module: 好友分组 -->
-    <!-- TODO: 有待重构 -->
+    <!-- TODO: 好友分组 有待重构 -->
     <div id="friend-classify" class="mdui-p-a-2">
       <ul class="mdui-list" mdui-collapse="{accordion: true}">
         <li class="mdui-collapse-item">
@@ -249,7 +298,7 @@
     </div>
   </div>
   <!-- Module: QQ空间 -->
-  <!-- TODO: 有待重构 -->
+  <!-- TODO: QQ 空间 有待重构 -->
   <div id="qqzone" class="mdui-p-a-2">
     <div class="mdui-container-fluid mdui-row">
       <div class="mdui-col-xs-12  mdui-col-sm-6 mdui-col-md-4 mdui-col-lg-3 mdui-col-xl-2">
@@ -410,6 +459,16 @@
     }
   </script>
   <script>
+    $(function () {
+      Notification.requestPermission(function (status) {
+        // 这将使我们能在 Chrome/Safari 中使用 Notification.permission
+        if (Notification.permission !== status) {
+          Notification.permission = status;
+        }
+      });
+    });
+  </script>
+  <script>
     function errConnect() {
       mdui.alert('请检查您的后端工作是否正常', '后端通信异常');
     }
@@ -483,12 +542,10 @@
             for (let i in data.data) {
               console.log(data.data[i]);
               if (data.data[i].request_type === 'friend') {
-                // TODO: 添加好友请求待完成
                 $('#newFriend-list').append('<div class="mdui-list-item" flag="' + data.data[i]['flag'] + '"><div class="mdui-list-item-avatar"><img src="' + getUserLogo(data.data[i]['user_id']) + '"></div><div class="mdui-list-item-content"><div class="mdui-list-item-title">' + data.data[i]['nickname'] + ' (' + data.data[i]['user_id'] + ')</div><div class="mdui-list-item-text mdui-list-item-one-line">对方留言：' + data.data[i]['comment'] + '</div><div class="mdui-list-item-text mdui-list-item-one-line">来源：' + data.data[i]['source'] + '</div></div><button class="mdui-btn mdui-btn-icon mdui-ripple" approve="true"><i class="mdui-icon"><ion-icon name="checkmark-outline"></ion-icon></i></button> <button class="mdui-btn mdui-btn-icon mdui-ripple" approve="false"><i class="mdui-icon"><ion-icon name="close-outline"></ion-icon></i></button></div>');
 
               }
               if (data.data[i].request_type === 'group') {
-                // TODO: 邀请进群请求待完成
                 $('#groupNotification-list').append('<div class="mdui-list-item" flag="' + data.data[i]['flag'] + '" sub_type="' + data.data[i]['sub_type'] + '"><div class="mdui-list-item-avatar"><img src="' + getGroupLogo(data.data[i]['group_id']) + '"></div><div class="mdui-list-item-content"><div class="mdui-list-item-title">' + data.data[i]['group_name'] + ' (' + data.data[i]['group_id'] + ')</div><div class="mdui-list-item-text mdui-list-item-one-line">您收到了来自 "' + data.data[i]['nickname'] + '" (' + data.data[i]['user_id'] + ') 的邀请</div></div><button class="mdui-btn mdui-btn-icon mdui-ripple" approve="true"><i class="mdui-icon"><ion-icon name="checkmark-outline"></ion-icon></i></button> <button class="mdui-btn mdui-btn-icon mdui-ripple" approve="false"><i class="mdui-icon"><ion-icon name="close-outline"></ion-icon></i></button></div>');
               }
             }
@@ -603,7 +660,16 @@
 
     // Debug
     ws.addEventListener('message', function (event) {
-      console.log('Websocket: ' + event.data);
+      data = JSON.parse(event.data);
+      switch (data['post_type']) {
+        case 'message':
+          console.log(data);
+          break;
+
+        default:
+          console.log(data);
+          break;
+      }
     });
   </script>
 </body>
