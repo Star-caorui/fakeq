@@ -18,24 +18,24 @@
 <body class="mdui-theme-layout-auto mdui-theme-primary-light-green mdui-theme-accent-blue">
   <div class="mdui-appbar">
     <div class="mdui-toolbar">
-      <button class="mdui-btn mdui-btn-icon settings" mdui-drawer="{target: '#sidebar'}">
+      <button id="sidebar_button" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar'}">
         <i class="mdui-icon">
           <ion-icon name="menu-outline"></ion-icon>
         </i>
       </button>
       <span class="mdui-typo-title">Fakeq</span>
       <div class="mdui-toolbar-spacer"></div>
-      <button class="mdui-btn mdui-btn-icon">
+      <button id="search_button" class="mdui-btn mdui-btn-icon">
         <i class="mdui-icon mdui-text-color-theme-icon">
           <ion-icon name="search-outline"></ion-icon>
         </i>
       </button>
-      <button class="mdui-btn mdui-btn-icon">
+      <button id="refresh_button" class="mdui-btn mdui-btn-icon">
         <i class="mdui-icon mdui-text-color-theme-icon">
           <ion-icon name="refresh-outline"></ion-icon>
         </i>
       </button>
-      <button class="mdui-btn mdui-btn-icon">
+      <button id="more_button" class="mdui-btn mdui-btn-icon">
         <i class="mdui-icon mdui-text-color-theme-icon">
           <ion-icon name="ellipsis-vertical-outline"></ion-icon>
         </i>
@@ -43,40 +43,40 @@
     </div>
 
     <!-- Module: 侧边栏 -->
-    <div class="mdui-drawer mdui-drawer-close mdui-color-theme-100" id="sidebar">
+    <div id="sidebar" class="mdui-drawer mdui-drawer-close mdui-color-theme-100">
       <div class="mdui-list">
         <div class="mdui-card-header">
-          <img class="mdui-card-header-avatar user_logo" src="" loading="lazy" />
-          <div class="mdui-card-header-title mdui-text-color-theme-text user_name"></div>
-          <div class="mdui-card-header-subtitle mdui-text-color-theme-text user_slogan"></div>
+          <img id="self_logo" class="mdui-card-header-avatar" src="" loading="lazy" />
+          <div id="self_name" class="mdui-card-header-title"></div>
+          <div id="self_slogan" class="mdui-card-header-subtitle"></div>
         </div>
         <div class="mdui-divider"></div>
         <a class="mdui-list-item mdui-ripple">
           <i class="mdui-list-item-icon mdui-icon mdui-text-color-theme-icon">
             <ion-icon name="person-outline"></ion-icon>
           </i>
-          <div class="mdui-list-item-content mdui-text-color-theme-text">我的帐号</div>
+          <div class="mdui-list-item-content">我的帐号</div>
         </a>
         <a class="mdui-list-item mdui-ripple">
           <i class="mdui-list-item-icon mdui-icon mdui-text-color-theme-icon">
             <ion-icon name="options-outline"></ion-icon>
           </i>
-          <div class="mdui-list-item-content mdui-text-color-theme-text">偏好设置</div>
+          <div class="mdui-list-item-content">偏好设置</div>
         </a>
       </div>
     </div>
 
     <!-- Module: 顶部 Tab 栏 -->
     <div class="mdui-tab mdui-tab-full-width" mdui-tab>
-      <a href="#chat" class="mdui-ripple">消息</a>
-      <a href="#people" class="mdui-ripple people">联系人</a>
-      <a href="#post" class="mdui-ripple mdui-hidden">动态</a>
+      <a id="chat_button" href="#chat" class="mdui-ripple">消息</a>
+      <a id="people_button" href="#people" class="mdui-ripple">联系人</a>
+      <a id="qqzone_button" href="#qqzone" class="mdui-ripple mdui-hidden">动态</a>
     </div>
   </div>
 
   <!-- Module: 消息 -->
   <div id="chat" class="mdui-p-a-2">
-    <ul class="mdui-list">
+    <ul id="chat-list" class="mdui-list">
       <li class="mdui-list-item mdui-ripple">
         <div class="mdui-list-item-avatar">
           <img src="https://q1.qlogo.cn/g?b=qq&s=640&nk=2549309641" />
@@ -115,20 +115,20 @@
 
   <!-- Module: 联系人 -->
   <div id="people" class="mdui-p-a-2">
-    <div class="mdui-collapse-item-header mdui-list-item mdui-ripple" mdui-dialog="{target: '#new-friend'}">
+    <div id="newFriend_button" class="mdui-list-item mdui-ripple" mdui-dialog="{target: '#newFriend'}">
       <div class="mdui-list-item-content">新朋友</div>
-      <i class="mdui-collapse-item-arrow mdui-icon">
+      <i class="mdui-icon">
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </i>
     </div>
-    <div class="mdui-collapse-item-header mdui-list-item mdui-ripple" mdui-dialog="{target: '#group-notification'}">
+    <div id="groupNotification_button" class="mdui-list-item mdui-ripple" mdui-dialog="{target: '#groupNotification'}">
       <div class="mdui-list-item-content">群通知</div>
-      <i class="mdui-collapse-item-arrow mdui-icon">
+      <i class="mdui-icon">
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </i>
     </div>
     <!-- Module: 新朋友 -->
-    <div class="mdui-dialog" id="new-friend">
+    <div id="newFriend" class="mdui-dialog">
       <div class="mdui-dialog-content">
         <div class="mdui-dialog-title">
           申请列表
@@ -138,58 +138,11 @@
             </i>
           </button>
         </div>
-        <div class="mdui-list-item">
-          <div class="mdui-list-item-avatar">
-            <img src="https://q1.qlogo.cn/g?b=qq&s=640&nk=1370879951" />
-          </div>
-          <div class="mdui-list-item-content">
-            <div class="mdui-list-item-title">神様は居るの？(1370879951)</div>
-            <div class="mdui-list-item-text mdui-list-item-one-line">
-              对方留言：谁那么闲去写这啊！
-            </div>
-            <div class="mdui-list-item-text mdui-list-item-one-line">
-              来源：单向好友
-            </div>
-          </div>
-          <button class="mdui-btn mdui-btn-icon mdui-ripple">
-            <i class="mdui-icon">
-              <ion-icon name="checkmark-outline"></ion-icon>
-            </i>
-          </button>
-          <button class="mdui-btn mdui-btn-icon mdui-ripple">
-            <i class="mdui-icon">
-              <ion-icon name="close-outline"></ion-icon>
-            </i>
-          </button>
-        </div>
-        <div class="mdui-list-item">
-          <div class="mdui-list-item-avatar">
-            <img src="https://q1.qlogo.cn/g?b=qq&s=640&nk=1239504152" />
-          </div>
-          <div class="mdui-list-item-content">
-            <div class="mdui-list-item-title">云山鸦 (1239504152)</div>
-            <div class="mdui-list-item-text mdui-list-item-one-line">
-              对方留言：我觉得楼上说的对
-            </div>
-            <div class="mdui-list-item-text mdui-list-item-one-line">
-              来源：单向好友
-            </div>
-          </div>
-          <button class="mdui-btn mdui-btn-icon">
-            <i class="mdui-icon">
-              <ion-icon name="checkmark-outline"></ion-icon>
-            </i>
-          </button>
-          <button class="mdui-btn mdui-btn-icon">
-            <i class="mdui-icon">
-              <ion-icon name="close-outline"></ion-icon>
-            </i>
-          </button>
-        </div>
+        <div id="newFriend-list"></div>
       </div>
     </div>
     <!-- Module: 群通知 -->
-    <div class="mdui-dialog" id="group-notification">
+    <div id="groupNotification" class="mdui-dialog">
       <div class="mdui-dialog-content">
         <div class="mdui-dialog-title">
           群通知
@@ -199,58 +152,41 @@
             </i>
           </button>
         </div>
-        <div class="mdui-list-item">
-          <div class="mdui-list-item-avatar">
-            <img src="https://p.qlogo.cn/gh/1039477758/1039477758/" />
-          </div>
-          <div class="mdui-list-item-content">
-            <div class="mdui-list-item-title">测试群聊 1</div>
-            <div class="mdui-list-item-text mdui-list-item-one-line">
-              已被群主解散
+        <div id="groupNotification-list">
+          <div class="mdui-list-item">
+            <div class="mdui-list-item-avatar">
+              <img src="https://p.qlogo.cn/gh/1039477758/1039477758/" />
             </div>
-            <div class="mdui-list-item-text mdui-list-item-one-line">
-              处理人：Star_caorui
+            <div class="mdui-list-item-content">
+              <div class="mdui-list-item-title">测试群聊 1</div>
+              <div class="mdui-list-item-text mdui-list-item-one-line">
+                已被群主解散
+              </div>
+              <div class="mdui-list-item-text mdui-list-item-one-line">
+                处理人：Star_caorui
+              </div>
             </div>
+            <button class="mdui-btn mdui-btn-icon mdui-ripple">
+              <i class="mdui-icon">
+                <ion-icon name="close-outline"></ion-icon>
+              </i>
+            </button>
           </div>
-          <button class="mdui-btn mdui-btn-icon mdui-ripple">
-            <i class="mdui-icon">
-              <ion-icon name="close-outline"></ion-icon>
-            </i>
-          </button>
-        </div>
-        <div class="mdui-list-item">
-          <div class="mdui-list-item-avatar">
-            <img src="https://p.qlogo.cn/gh/204097403/204097403/" />
-          </div>
-          <div class="mdui-list-item-content">
-            <div class="mdui-list-item-title">测试群聊 2</div>
-            <div class="mdui-list-item-text mdui-list-item-one-line">
-              您已被移出群聊
-            </div>
-            <div class="mdui-list-item-text mdui-list-item-one-line">
-              处理人：Star_caorui
-            </div>
-          </div>
-          <button class="mdui-btn mdui-btn-icon">
-            <i class="mdui-icon">
-              <ion-icon name="close-outline"></ion-icon>
-            </i>
-          </button>
         </div>
       </div>
     </div>
     <!-- Module: 联系人 Tab 栏 -->
-    <div class="mdui-tab mdui-tab-full-width " mdui-tab>
-      <a href="#friend" class="mdui-ripple">好友</a>
-      <a href="#friend-classify" class="mdui-ripple mdui-hidden">分组</a>
-      <a href="#group" class="mdui-ripple group">群聊</a>
+    <div class="mdui-tab mdui-tab-full-width" mdui-tab>
+      <a id="friend_button" href="#friend" class="mdui-ripple">好友</a>
+      <a id="friendClassify_button" href="#friend-classify" class="mdui-ripple mdui-hidden">分组</a>
+      <a id="group_button" href="#group" class="mdui-ripple">群聊</a>
     </div>
     <!-- Module: 我的好友 -->
     <div id="friend" class="mdui-p-a-2">
-      <ul class="mdui-list friend-ul">
-      </ul>
+      <ul id="friend-list" class="mdui-list"></ul>
     </div>
     <!-- Module: 好友分组 -->
+    <!-- TODO: 有待重构 -->
     <div id="friend-classify" class="mdui-p-a-2">
       <ul class="mdui-list" mdui-collapse="{accordion: true}">
         <li class="mdui-collapse-item">
@@ -309,12 +245,12 @@
     </div>
     <!-- Module: 我的群聊 -->
     <div id="group" class="mdui-p-a-2">
-      <ul class="mdui-list group-ul" mdui-collapse="{accordion: true}">
-      </ul>
+      <ul id="group-list" class="mdui-list" mdui-collapse="{accordion: true}"></ul>
     </div>
   </div>
-  <!-- Module: 动态 -->
-  <div id="post" class="mdui-p-a-2">
+  <!-- Module: QQ空间 -->
+  <!-- TODO: 有待重构 -->
+  <div id="qqzone" class="mdui-p-a-2">
     <div class="mdui-container-fluid mdui-row">
       <div class="mdui-col-xs-12  mdui-col-sm-6 mdui-col-md-4 mdui-col-lg-3 mdui-col-xl-2">
         <div class="mdui-card mdui-m-y-1">
@@ -424,89 +360,251 @@
     integrity="sha512-esqkwbZWQWGPKMg0apElthYF54n7TMcMGQs/rC8KyWIjuFt+d+kB2n4j7yWOXGn82wMrs5rLMPoiw7n73GJ5Nw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
-  var $ = mdui.$;
-    const ws = new WebSocket('ws://localhost:5700');
-    // const ws = new WebSocket('ws://localhost:6700');
+    var $ = mdui.$;
 
+    if (!localStorage.getItem("backend")) {
+      mdui.dialog({
+        title: '您尚未选择后端服务',
+        content: 'Fakeq 支持 oicq, cq-http 两种不同的后端服务，请选择您的后端服务',
+        buttons: [
+          {
+            text: 'oicq（推荐）',
+            onClick: function (inst) {
+              localStorage.setItem("backend", "oicq");
+              location.reload();
+              throw new Error('exit');
+            }
+          },
+          {
+            text: 'go-cqhttp',
+            onClick: function (inst) {
+              localStorage.setItem("backend", "go-cqhttp");
+              location.reload();
+              throw new Error('exit');
+            }
+          }
+        ]
+      });
+    }
+
+    backend = localStorage.getItem("backend");
+    switch (backend) {
+      case "oicq":
+        var ws   = new WebSocket('ws://localhost:5700');
+        var http = 'http://localhost:5700';
+        break;
+
+      case "go-cqhttp":
+        var ws = new WebSocket('ws://localhost:6700');
+        var http = 'http://localhost:5700';
+        break;
+
+      default:
+        if (localStorage.getItem("backend")) {
+          mdui.alert("您的后端服务配置错误，请重新配置", "错误");
+          localStorage.removeItem('backend');
+          location.reload();
+          throw new Error('exit');
+        }
+        break;
+    }
+  </script>
+  <script>
     function errConnect() {
       mdui.alert('请检查您的后端工作是否正常', '后端通信异常');
     }
 
-    function initUser() {
-      ws.send('{"action" : "get_login_info", "params" : {}}');
-      ws.onmessage = function (event) {
-        let data = JSON.parse(event.data);
-        if (data.status == 'ok') {
-          $('.user_logo').attr({src: 'https://q1.qlogo.cn/g?b=qq&s=640&nk=' + data.data.user_id});
-          $('.user_name').text(data.data.nickname);
-          $('.user_slogan').text('暂不支持设置个性签名');
-          console.log('Message from server ', data.data);
-        }
-      }
+    function getUserLogo(number) {
+      return 'https://q1.qlogo.cn/g?b=qq&s=640&nk=' + number;
     }
 
-    function getUserList() {
-      ws.send('{"action" : "get_friend_list", "params" : {}}');
-      ws.onmessage = function (event) {
-        let data = JSON.parse(event.data);
-        if (data.status == 'ok') {
-          $('.friend-ul').empty();
-          for (let i in data.data) {
-            $('.friend-ul').append('<li class="mdui-list-item mdui-ripple"><div class="mdui-list-item-avatar"><img src="https://q1.qlogo.cn/g?b=qq&s=640&nk=' + data.data[i]['user_id'] + '" /></div><div class="mdui-list-item-content"><div class="mdui-list-item-title">' + data.data[i]['remark'] + '</div><div class="mdui-list-item-text mdui-list-item-one-line mdui-hidden">暂不支持个性签名</div></div></li');
+    function getGroupLogo(number) {
+      return 'https://p.qlogo.cn/gh/' + number + '/' + number + '/0';
+    }
+
+    function get_login_info() {
+      $.ajax({
+        method: 'POST',
+        url: http + '/get_login_info',
+        data: {
+          params: ''
+        },
+        success: function (data) {
+          data = JSON.parse(data);
+          console.log(data);
+          if (data.status === 'ok') {
+            $('#self_logo').attr({ src: getUserLogo(data.data.user_id) });
+            $('#self_name').text(data.data.nickname);
+            $('#self_slogan').text('暂不支持设置个性签名');
           }
+          delete data;
         }
-      }
+      });
     }
 
-    function getGroupList() {
-      ws.send('{"action" : "get_group_list", "params" : {}}');
-      ws.onmessage = function (event) {
-        let data = JSON.parse(event.data);
-        if (data.status == 'ok') {
-          $('.group-ul').empty();
-          for (let i in data.data) {
-            $('.group-ul').append('<li class="mdui-list-item mdui-ripple"><div class="mdui-list-item-avatar"><img src="https://p.qlogo.cn/gh/' + data.data[i]['group_id'] + '/' + data.data[i]['group_id'] + '/0" /></div><div class="mdui-list-item-content"><div class="mdui-list-item-title">' + data.data[i]['group_name'] + '</div></div></li');
+    // TODO: 消息页面功能待完成
+
+    function set_friend_add_request(flag, approve) {
+      $.ajax({
+        method: 'POST',
+        url: http + '/set_friend_add_request',
+        data: {
+          flag: flag,
+          approve: approve
+        }
+      });
+    }
+
+    function set_group_add_request(flag, sub_type, approve) {
+      $.ajax({
+        method: 'POST',
+        url: http + '/set_group_add_request',
+        data: {
+          flag: flag,
+          sub_type: sub_type,
+          approve: approve
+        }
+      });
+    }
+
+    function get_system_msg() {
+      $.ajax({
+        method: 'POST',
+        url: http + '/get_system_msg',
+        data: {
+          params: ''
+        },
+        success: function (data) {
+          data = JSON.parse(data);
+          console.log(data);
+          if (data.status === 'ok') {
+            $('#newFriend-list').empty();
+            $('#groupNotification-list').empty();
+            for (let i in data.data) {
+              console.log(data.data[i]);
+              if (data.data[i].request_type === 'friend') {
+                // TODO: 添加好友请求待完成
+                $('#newFriend-list').append('<div class="mdui-list-item" flag="' + data.data[i]['flag'] + '"><div class="mdui-list-item-avatar"><img src="' + getUserLogo(data.data[i]['user_id']) + '"></div><div class="mdui-list-item-content"><div class="mdui-list-item-title">' + data.data[i]['nickname'] + ' (' + data.data[i]['user_id'] + ')</div><div class="mdui-list-item-text mdui-list-item-one-line">对方留言：' + data.data[i]['comment'] + '</div><div class="mdui-list-item-text mdui-list-item-one-line">来源：' + data.data[i]['source'] + '</div></div><button class="mdui-btn mdui-btn-icon mdui-ripple" approve="true"><i class="mdui-icon"><ion-icon name="checkmark-outline"></ion-icon></i></button> <button class="mdui-btn mdui-btn-icon mdui-ripple" approve="false"><i class="mdui-icon"><ion-icon name="close-outline"></ion-icon></i></button></div>');
+
+              }
+              if (data.data[i].request_type === 'group') {
+                // TODO: 邀请进群请求待完成
+                $('#groupNotification-list').append('<div class="mdui-list-item" flag="' + data.data[i]['flag'] + '" sub_type="' + data.data[i]['sub_type'] + '"><div class="mdui-list-item-avatar"><img src="' + getGroupLogo(data.data[i]['group_id']) + '"></div><div class="mdui-list-item-content"><div class="mdui-list-item-title">' + data.data[i]['group_name'] + ' (' + data.data[i]['group_id'] + ')</div><div class="mdui-list-item-text mdui-list-item-one-line">您收到了来自 "' + data.data[i]['nickname'] + '" (' + data.data[i]['user_id'] + ') 的邀请</div></div><button class="mdui-btn mdui-btn-icon mdui-ripple" approve="true"><i class="mdui-icon"><ion-icon name="checkmark-outline"></ion-icon></i></button> <button class="mdui-btn mdui-btn-icon mdui-ripple" approve="false"><i class="mdui-icon"><ion-icon name="close-outline"></ion-icon></i></button></div>');
+              }
+            }
+            $('#newFriend-list div button').on('click', function (e) {
+              set_friend_add_request($(this).parent().attr('flag'), $(this).attr('approve'));
+              $(this).parent().remove();
+              mdui.snackbar({
+                message: '您已' + ($(this).attr('approve') === 'true' ? '同意' : '拒绝') + '了对方的好友请求',
+                position: 'right-bottom',
+              });
+            });
+            $('#groupNotification-list div button').on('click', function (e) {
+              set_group_add_request($(this).parent().attr('flag'), $(this).parent().attr('sub_type'), $(this).attr('approve'));
+              $(this).parent().remove();
+              mdui.snackbar({
+                message: '您已' + ($(this).attr('approve') === 'true' ? '同意' : '拒绝') + '了对方的邀请',
+                position: 'right-bottom',
+              });
+            });
           }
+          delete data;
         }
-      }
+      });
     }
 
-    function initChat() {
-      console.log('initChat');
+    function get_friend_list() {
+      $.ajax({
+        method: 'POST',
+        url: http + '/get_friend_list',
+        data: {
+          params: ''
+        },
+        success: function (data) {
+          data = JSON.parse(data);
+          console.log(data);
+          if (data.status === 'ok') {
+            $('#friend-list').empty();
+            for (let i in data.data) {
+              $('#friend-list').append('<li class="mdui-list-item mdui-ripple"><div class="mdui-list-item-avatar"><img src="' + getUserLogo(data.data[i]['user_id']) + '" /></div><div class="mdui-list-item-content"><div class="mdui-list-item-title">' + data.data[i]['remark'] + '</div><div class="mdui-list-item-text mdui-list-item-one-line mdui-hidden">暂不支持个性签名</div></div></li');
+            }
+          }
+          delete data;
+        }
+      });
     }
 
-    function initPeople() {
-      getUserList();
-    }
+    // TODO : 获取好友分组功能待完成
 
+    function get_group_list() {
+      $.ajax({
+        method: 'POST',
+        url: http + '/get_group_list',
+        data: {
+          params: ''
+        },
+        success: function (data) {
+          data = JSON.parse(data);
+          console.log(data);
+          if (data.status === 'ok') {
+            $('#group-list').empty();
+            for (let i in data.data) {
+              $('#group-list').append('<li class="mdui-list-item mdui-ripple"><div class="mdui-list-item-avatar"><img src="' + getGroupLogo(data.data[i]['group_id']) + '" /></div><div class="mdui-list-item-content"><div class="mdui-list-item-title">' + data.data[i]['group_name'] + '</div></div></li');
+              mdui.mutation();
+            }
+          }
+          delete data;
+        }
+      });
+    }
+  </script>
+  <script>
     ws.addEventListener('close', function (event) {
       errConnect();
     });
 
+    $('#sidebar_button').on('click', function (e) {
+      console.clear();
+      get_login_info();
+    });
+
     ws.addEventListener('open', function (event) {
-      initChat();
+      if ($('#chat-list').children().length === 0) {
+        // TODO: 初始化聊天列表
+        console.clear();
+      }
     });
 
-    $('.settings').on('click', function (e) {
-      initUser();
+    $('#people_button').on('click', function (e) {
+      if ($('#friend-list').children().length === 0) {
+        console.clear();
+        get_friend_list();
+        get_system_msg();
+      } else {
+        console.clear();
+        get_system_msg();
+      }
+    });
+
+    $('#friend_button').on('click', function (e) {
       console.clear();
+      get_friend_list();
     });
 
-    $('.people').on('click', function (e) {
-      initPeople();
+    // TODO : 好友分组功能待完成
+
+    $('#group_button').on('click', function (e) {
       console.clear();
+      get_group_list();
     });
 
-    $('.group').on('click', function (e) {
-      getGroupList();
-      console.clear();
-    });
+    // TODO ：QQ 空间
 
+    // Debug
     ws.addEventListener('message', function (event) {
-      console.log('Message from server ', event.data);
+      console.log('Websocket: ' + event.data);
     });
-
-
   </script>
 </body>
 </html>
